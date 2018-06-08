@@ -7,11 +7,11 @@
  * Server/client environment: argument handling, config file parsing,
  * thread wrappers, startup time
  */
-#ifndef BITCOIN_UTIL_H
-#define BITCOIN_UTIL_H
+#ifndef PERFECTCOIN_UTIL_H
+#define PERFECTCOIN_UTIL_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoin-config.h>
+#include <config/perfectcoin-config.h>
 #endif
 
 #include <compat.h>
@@ -47,8 +47,8 @@ public:
 
 extern CTranslationInterface translationInterface;
 
-extern const char * const BITCOIN_CONF_FILENAME;
-extern const char * const BITCOIN_PID_FILENAME;
+extern const char * const PERFECTCOIN_CONF_FILENAME;
+extern const char * const PERFECTCOIN_PID_FILENAME;
 
 /**
  * Translation function: Call Translate signal on UI interface, which returns a boost::optional result.
@@ -316,7 +316,7 @@ void RenameThread(const char* name);
  */
 template <typename Callable> void TraceThread(const char* name,  Callable func)
 {
-    std::string s = strprintf("bitcoin-%s", name);
+    std::string s = strprintf("perfectcoin-%s", name);
     RenameThread(s.c_str());
     try
     {
@@ -357,4 +357,4 @@ std::unique_ptr<T> MakeUnique(Args&&... args)
  */
 int ScheduleBatchPriority(void);
 
-#endif // BITCOIN_UTIL_H
+#endif // PERFECTCOIN_UTIL_H

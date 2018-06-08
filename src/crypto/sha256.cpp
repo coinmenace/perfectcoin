@@ -497,10 +497,10 @@ std::string SHA256AutoDetect()
     if ((ecx >> 19) & 1) {
         Transform = sha256_sse4::Transform;
         TransformD64 = TransformD64Wrapper<sha256_sse4::Transform>;
-#if defined(ENABLE_SSE41) && !defined(BUILD_BITCOIN_INTERNAL)
+#if defined(ENABLE_SSE41) && !defined(BUILD_PERFECTCOIN_INTERNAL)
         TransformD64_4way = sha256d64_sse41::Transform_4way;
         ret = "sse4(1way+4way)";
-#if defined(ENABLE_AVX2) && !defined(BUILD_BITCOIN_INTERNAL)
+#if defined(ENABLE_AVX2) && !defined(BUILD_PERFECTCOIN_INTERNAL)
         cpuid(7, 0, eax, ebx, ecx, edx);
         if ((ebx >> 5) & 1) {
             TransformD64_8way = sha256d64_avx2::Transform_8way;

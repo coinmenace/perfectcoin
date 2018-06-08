@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_TXMEMPOOL_H
-#define BITCOIN_TXMEMPOOL_H
+#ifndef PERFECTCOIN_TXMEMPOOL_H
+#define PERFECTCOIN_TXMEMPOOL_H
 
 #include <memory>
 #include <set>
@@ -800,4 +800,4 @@ struct DisconnectedBlockTransactions {
     }
 };
 
-#endif // BITCOIN_TXMEMPOOL_H
+#endif // PERFECTCOIN_TXMEMPOOL_H

@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_WALLET_WALLET_H
-#define BITCOIN_WALLET_WALLET_H
+#ifndef PERFECTCOIN_WALLET_WALLET_H
+#define PERFECTCOIN_WALLET_WALLET_H
 
 #include <amount.h>
 #include <policy/feerate.h>
@@ -1313,4 +1313,4 @@ public:
 // be IsAllFromMe).
 int64_t CalculateMaximumSignedTxSize(const CTransaction &tx, const CWallet *wallet);
 int64_t CalculateMaximumSignedTxSize(const CTransaction &tx, const CWallet *wallet, const std::vector<CTxOut>& txouts);
-#endif // BITCOIN_WALLET_WALLET_H
+#endif // PERFECTCOIN_WALLET_WALLET_H

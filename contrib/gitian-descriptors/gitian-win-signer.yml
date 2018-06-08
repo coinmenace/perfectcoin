@@ -1,5 +1,5 @@
 ---
-name: "bitcoin-win-signer"
+name: "perfectcoin-win-signer"
 suites:
 - "trusty"
 architectures:
@@ -8,12 +8,12 @@ packages:
 - "libssl-dev"
 - "autoconf"
 remotes:
-- "url": "https://github.com/bitcoin-core/bitcoin-detached-sigs.git"
+- "url": "https://github.com/perfectcoin-core/perfectcoin-detached-sigs.git"
   "dir": "signature"
 files:
 - "osslsigncode-1.7.1.tar.gz"
 - "osslsigncode-Backports-to-1.7.1.patch"
-- "bitcoin-win-unsigned.tar.gz"
+- "perfectcoin-win-unsigned.tar.gz"
 script: |
   BUILD_DIR=`pwd`
   SIGDIR=${BUILD_DIR}/signature/win
