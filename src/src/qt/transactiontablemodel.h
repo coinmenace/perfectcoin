@@ -5,7 +5,7 @@
 #ifndef PERFECTCOIN_QT_TRANSACTIONTABLEMODEL_H
 #define PERFECTCOIN_QT_TRANSACTIONTABLEMODEL_H
 
-#include <qt/bitcoinunits.h>
+#include <qt/perfectcoinunits.h>
 
 #include <QAbstractTableModel>
 #include <QStringList>

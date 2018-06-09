@@ -6,7 +6,7 @@
 #include <config/perfectcoin-config.h>
 #endif
 
-#include <qt/bitcoingui.h>
+#include <qt/perfectcoingui.h>
 
 #include <chainparams.h>
 #include <qt/clientmodel.h>
@@ -141,11 +141,11 @@ static void initTranslations(QTranslator &qtTranslatorBase, QTranslator &qtTrans
     if (qtTranslator.load("qt_" + lang_territory, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
         QApplication::installTranslator(&qtTranslator);
 
-    // Load e.g. bitcoin_de.qm (shortcut "de" needs to be defined in perfectcoin.qrc)
+    // Load e.g. perfectcoin_de.qm (shortcut "de" needs to be defined in perfectcoin.qrc)
     if (translatorBase.load(lang, ":/translations/"))
         QApplication::installTranslator(&translatorBase);
 
-    // Load e.g. bitcoin_de_DE.qm (shortcut "de_DE" needs to be defined in perfectcoin.qrc)
+    // Load e.g. perfectcoin_de_DE.qm (shortcut "de_DE" needs to be defined in perfectcoin.qrc)
     if (translator.load(lang_territory, ":/translations/"))
         QApplication::installTranslator(&translator);
 }
@@ -264,7 +264,7 @@ private:
     void startThread();
 };
 
-#include <qt/bitcoin.moc>
+#include <qt/perfectcoin.moc>
 
 BitcoinCore::BitcoinCore(interfaces::Node& node) :
     QObject(), m_node(node)
@@ -578,8 +578,8 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForCStrings(QTextCodec::codecForTr());
 #endif
 
-    Q_INIT_RESOURCE(bitcoin);
-    Q_INIT_RESOURCE(bitcoin_locale);
+    Q_INIT_RESOURCE(perfectcoin);
+    Q_INIT_RESOURCE(perfectcoin_locale);
 
     BitcoinApplication app(*node, argc, argv);
 #if QT_VERSION > 0x050100
@@ -651,7 +651,7 @@ int main(int argc, char *argv[])
     if (!Intro::pickDataDirectory(*node))
         return EXIT_SUCCESS;
 
-    /// 6. Determine availability of data and blocks directory and parse bitcoin.conf
+    /// 6. Determine availability of data and blocks directory and parse perfectcoin.conf
     /// - Do not call GetDataDir(true) before this step finishes
     if (!fs::is_directory(GetDataDir(false)))
     {

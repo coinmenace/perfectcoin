@@ -48,7 +48,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks";
+    const char* pszTimestamp = "PerfectCoin is launched";
     const CScript genesisOutputScript = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -101,7 +101,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1479168000; // November 15th, 2016.
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1510704000; // November 15th, 2017.
 
-        // The best chain should have at least this much work.
+        // The bpubkeyest chain should have at least this much work.
         consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000f91c579d57cad4bc5278cc");
 
         // By default assume that the signatures in ancestors of this block are valid.
@@ -119,7 +119,7 @@ public:
         nDefaultPort = 8333;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1528426800, 2083236893, 0x1d00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1528426800, 4215500, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
             if(genesis.GetHash() != uint256S("0x"))
             {
@@ -139,18 +139,18 @@ public:
                             }
                             if (genesis.nNonce % 10000 == 0)
                             {
-                                    printf("Testnet: nonce %08u: hash = %s \n", genesis.nNonce, genesis.GetHash().ToString().c_str());
+                                    printf("Mainnet: nonce %08u: hash = %s \n", genesis.nNonce, genesis.GetHash().ToString().c_str());
                             }
                     }
                     printf("Mainnet block.nBits = %u \n", genesis.nBits);
-                    printf("Testnet block.nTime = %u \n", genesis.nTime);
-                    printf("Testnet block.nNonce = %u \n", genesis.nNonce);
-                    printf("Testnet block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
-                    printf("Testnet block.GetHash = %s\n", genesis.GetHash().GetHex().c_str());
-                    printf("Testnet block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
+                    printf("Mainnet block.nTime = %u \n", genesis.nTime);
+                    printf("Mainnet block.nNonce = %u \n", genesis.nNonce);
+                    printf("Mainnet block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+                    printf("Mainnet block.GetHash = %s\n", genesis.GetHash().GetHex().c_str());
+                    printf("Mainnet block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
             }
-        assert(consensus.hashGenesisBlock == uint256S("0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"));
-        assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000000acbdba39878e61aa393b483ef3ce6b2604fc76929861cbf2af2cf0824"));
+        assert(genesis.hashMerkleRoot == uint256S("0x46159e89bd687b5bb359ee3ea3704d373084a677c40f72f0c66db3b62d006070"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
@@ -277,7 +277,7 @@ public:
                             }
                             if (genesis.nNonce % 10000 == 0)
                             {
-                                    printf("Testnet: nonce %08u: hash = %s \n", genesis.nNonce, genesis.GetHash().ToString().c_str());
+                                    //printf("Testnet: nonce %08u: hash = %s \n", genesis.nNonce, genesis.GetHash().ToString().c_str());
                             }
                     }
                     printf("Testnet block.nBits = %u \n", genesis.nBits);
@@ -394,7 +394,7 @@ public:
                             }
                             if (genesis.nNonce % 10000 == 0)
                             {
-                                    printf("Testnet: nonce %08u: hash = %s \n", genesis.nNonce, genesis.GetHash().ToString().c_str());
+                                    //printf("Testnet: nonce %08u: hash = %s \n", genesis.nNonce, genesis.GetHash().ToString().c_str());
                             }
                     }
                     printf("RegTestnet block.nBits = %u \n", genesis.nBits);
