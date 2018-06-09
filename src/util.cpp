@@ -83,7 +83,7 @@
 const int64_t nStartupTime = GetTime();
 
 const char * const PERFECTCOIN_CONF_FILENAME = "perfectcoin.conf";
-const char * const PERFECTCOIN_PID_FILENAME = "bitcoind.pid";
+const char * const PERFECTCOIN_PID_FILENAME = "perfectcoind.pid";
 
 ArgsManager gArgs;
 
@@ -274,7 +274,7 @@ public:
         std::pair<bool,std::string> found_result(false, std::string());
 
         // We pass "true" to GetArgHelper in order to return the last
-        // argument value seen from the command line (so "bitcoind -foo=bar
+        // argument value seen from the command line (so "perfectcoind -foo=bar
         // -foo=baz" gives GetArg(am,"foo")=={true,"baz"}
         found_result = GetArgHelper(am.m_override_args, arg, true);
         if (found_result.first) {

@@ -4,7 +4,7 @@
 #include <boost/test/unit_test.hpp>
 #include <cuckoocache.h>
 #include <script/sigcache.h>
-#include <test/test_bitcoin.h>
+#include <test/test_perfectcoin.h>
 #include <random.h>
 #include <thread>
 
