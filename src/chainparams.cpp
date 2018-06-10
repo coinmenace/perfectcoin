@@ -116,54 +116,56 @@ public:
         pchMessageStart[1] = 0xbe;
         pchMessageStart[2] = 0xb4;
         pchMessageStart[3] = 0xd9;
-        nDefaultPort = 8333;
+        nDefaultPort = 6333;
         nPruneAfterHeight = 100000;
-
-        genesis = CreateGenesisBlock(1528426800, 4215500, 0x1d00ffff, 1, 50 * COIN);
+        uint32_t nTime = 1528459200;
+        uint32_t nNonce = 8465129;
+        uint32_t nBits = 504365040;
+        int32_t nVersion = 1;
+        const CAmount& genesisReward = 50 * COIN;
+        genesis = CreateGenesisBlock(nTime, nNonce, nBits, nVersion, genesisReward);
+        //genesis = CreateGenesisBlock(1528536005, 3078569, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-            if(genesis.GetHash() != uint256S("0x"))
-            {
-                    bool fNegative;
-                    bool fOverflow;
-                    arith_uint256 bigNum;
-                    printf("Searching for genesis block...\n");
-                    bigNum.SetCompact(genesis.nBits, &fNegative, &fOverflow);
-                    while(UintToArith256(genesis.GetHash()) > bigNum)
-                    {
-                            ++genesis.nNonce;
-                            if (genesis.nNonce == 0)
-                            {
-                                    printf("NONCE WRAPPED, incrementing time");
-                                    std::cout << std::string("NONCE WRAPPED, incrementing time:\n");
-                                    ++genesis.nTime;
-                            }
-                            if (genesis.nNonce % 10000 == 0)
-                            {
-                                    printf("Mainnet: nonce %08u: hash = %s \n", genesis.nNonce, genesis.GetHash().ToString().c_str());
-                            }
-                    }
-                    printf("Mainnet block.nBits = %u \n", genesis.nBits);
-                    printf("Mainnet block.nTime = %u \n", genesis.nTime);
-                    printf("Mainnet block.nNonce = %u \n", genesis.nNonce);
-                    printf("Mainnet block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
-                    printf("Mainnet block.GetHash = %s\n", genesis.GetHash().GetHex().c_str());
-                    printf("Mainnet block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
-            }
-        assert(consensus.hashGenesisBlock == uint256S("0x0000000acbdba39878e61aa393b483ef3ce6b2604fc76929861cbf2af2cf0824"));
-        assert(genesis.hashMerkleRoot == uint256S("0x46159e89bd687b5bb359ee3ea3704d373084a677c40f72f0c66db3b62d006070"));
+        /**   if(genesis.GetHash() != uint256S("0x"))
+           {
+                   bool fNegative;
+                   bool fOverflow;
+                   arith_uint256 bigNum;
+                   printf("Searching for genesis block...\n");
+                   bigNum.SetCompact(genesis.nBits, &fNegative, &fOverflow);
+                   while(UintToArith256(genesis.GetHash()) > bigNum)
+                   {
+
+                       ++genesis.nNonce;
+                           if (genesis.nNonce == 0)
+                           {
+                                   printf("NONCE WRAPPED, incrementing time");
+                                   std::cout << std::string("NONCE WRAPPED, incrementing time:\n");
+                                   ++genesis.nTime;
+                           }
+                           if (genesis.nNonce % 10000 == 0)
+                           {
+                                   printf("Mainnet: nonce %08u: hash = %s \n", genesis.nNonce, genesis.GetHash().ToString().c_str());
+                           }
+                   }
+                   printf("Mainnet block.nBits = %u \n", genesis.nBits);
+                   printf("Mainnet block.nTime = %u \n", genesis.nTime);
+                   printf("Mainnet block.nNonce = %u \n", genesis.nNonce);
+                   printf("Mainnet block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+                   printf("Mainnet block.GetHash = %s\n", genesis.GetHash().GetHex().c_str());
+                   printf("Mainnet block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
+           }
+       */
+        assert(consensus.hashGenesisBlock == uint256S("0x00000bc33008d34a646d40528c0c379016dc2411193958d2109f20635b9b31f7"));
+        assert(genesis.hashMerkleRoot == uint256S("0x10aafd067703f004f14df23da2e6f97d599561a8e0cc5233a9ea15e3b54d6b5f"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
         // This is fine at runtime as we'll fall back to using them as a oneshot if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
-        vSeeds.emplace_back("seed.perfectcoin.sipa.be"); // Pieter Wuille, only supports x1, x5, x9, and xd
-        vSeeds.emplace_back("dnsseed.bluematt.me"); // Matt Corallo, only supports x9
-        vSeeds.emplace_back("dnsseed.perfectcoin.dashjr.org"); // Luke Dashjr
-        vSeeds.emplace_back("seed.bitcoinstats.com"); // Christian Decker, supports x1 - xf
-        vSeeds.emplace_back("seed.perfectcoin.jonasschnelli.ch"); // Jonas Schnelli, only supports x1, x5, x9, and xd
-        vSeeds.emplace_back("seed.btc.petertodd.org"); // Peter Todd, only supports x1, x5, x9, and xd
-        vSeeds.emplace_back("seed.perfectcoin.sprovoost.nl"); // Sjors Provoost
+        vSeeds.emplace_back("194.88.105.45");
+        vSeeds.emplace_back("192.99.224.33");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -254,12 +256,12 @@ public:
         pchMessageStart[1] = 0x11;
         pchMessageStart[2] = 0x09;
         pchMessageStart[3] = 0x07;
-        nDefaultPort = 18333;
+        nDefaultPort = 6433;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1528423200, 414098458, 0x1d00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1528458200, 417092626, 504365040, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-            if(genesis.GetHash() != uint256S("0x"))
+          /**  if(genesis.GetHash() != uint256S("0x"))
             {
                     bool fNegative;
                     bool fOverflow;
@@ -286,17 +288,17 @@ public:
                     printf("Testnet block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
                     printf("Testnet block.GetHash = %s\n", genesis.GetHash().GetHex().c_str());
                     printf("Testnet block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
-            }
-        //assert(consensus.hashGenesisBlock == uint256S("0x000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943"));
-        //assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
+            }*/
+        assert(consensus.hashGenesisBlock == uint256S("0x0000065d439bf32a666937f41143897482f1bf929ed9c74a205a75bab58f2565"));
+        assert(genesis.hashMerkleRoot == uint256S("0x10aafd067703f004f14df23da2e6f97d599561a8e0cc5233a9ea15e3b54d6b5f"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.emplace_back("testnet-seed.perfectcoin.jonasschnelli.ch");
-        vSeeds.emplace_back("seed.tbtc.petertodd.org");
-        vSeeds.emplace_back("seed.testnet.perfectcoin.sprovoost.nl");
-        vSeeds.emplace_back("testnet-seed.bluematt.me"); // Just a static list of stable node(s), only supports x9
+        //vSeeds.emplace_back("testnet-seed.perfectcoin.jonasschnelli.ch");
+        //vSeeds.emplace_back("seed.tbtc.petertodd.org");
+        //vSeeds.emplace_back("seed.testnet.perfectcoin.sprovoost.nl");
+        //vSeeds.emplace_back("testnet-seed.bluematt.me"); // Just a static list of stable node(s), only supports x9
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
@@ -371,12 +373,12 @@ public:
         pchMessageStart[1] = 0xbf;
         pchMessageStart[2] = 0xb5;
         pchMessageStart[3] = 0xda;
-        nDefaultPort = 18444;
+        nDefaultPort = 6544;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1528419600, 2, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1528457200, 8465129, 504365040, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-            if(genesis.GetHash() != uint256S("0x"))
+            /**if(genesis.GetHash() != uint256S("0x"))
             {
                     bool fNegative;
                     bool fOverflow;
@@ -403,9 +405,9 @@ public:
                     printf("RegTestnet block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
                     printf("RegTestnet block.GetHash = %s\n", genesis.GetHash().GetHex().c_str());
                     printf("RegTestnet block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
-            }
-        //assert(consensus.hashGenesisBlock == uint256S("0x0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206"));
-        //assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
+            }*/
+        assert(consensus.hashGenesisBlock == uint256S("0x00000bc33008d34a646d40528c0c379016dc2411193958d2109f20635b9b31f7"));
+        assert(genesis.hashMerkleRoot == uint256S("0x10aafd067703f004f14df23da2e6f97d599561a8e0cc5233a9ea15e3b54d6b5f"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
