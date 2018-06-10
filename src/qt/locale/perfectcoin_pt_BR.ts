@@ -3247,7 +3247,7 @@ Esta sincronização inicial é muito exigente e pode expor problemas de hardwar
         <translation>O banco de dados de blocos contém um bloco que parece ser do futuro. Isso pode ser devido à data e hora do seu computador estarem configuradas incorretamente. Apenas reconstrua o banco de dados de blocos se você estiver certo de que a data e hora de seu computador estão corretas.</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>Final Release</source>
         <translation>Este é um build de teste pré-lançamento - use por sua conta e risco - não use para mineração ou comércio.</translation>
     </message>
     <message>

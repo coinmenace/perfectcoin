@@ -3102,7 +3102,7 @@
         <translation>Lohkotietokanta sisältää lohkon, joka vaikuttaa olevan tulevaisuudesta. Tämä saattaa johtua tietokoneesi virheellisesti asetetuista aika-asetuksista. Rakenna lohkotietokanta uudelleen vain jos olet varma, että tietokoneesi päivämäärä ja aika ovat oikein.</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>Final Release</source>
         <translation>Tämä on esi-julkaistu kokeiluversio - Käyttö omalla vastuullasi - Ethän käytä louhimiseen tai kauppasovelluksiin.</translation>
     </message>
     <message>

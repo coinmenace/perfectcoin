@@ -1902,7 +1902,7 @@
         <translation>Plenumi komandon kiam monuja transakcio ŝanĝiĝas (%s en cmd anstataŭiĝas per TxID)</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>Final Release</source>
         <translation>Tiu ĉi estas antaŭeldona testa versio - uzu laŭ via propra risko - ne uzu por minado aŭ por aplikaĵoj por vendistoj</translation>
     </message>
     <message>

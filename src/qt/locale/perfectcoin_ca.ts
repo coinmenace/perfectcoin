@@ -3130,7 +3130,7 @@
         <translation>La base de dades de blocs conté un bloc que sembla ser del futur. Això pot ser degut a que la data i l'hora del vostre ordinador s'estableix incorrectament. Només reconstruïu la base de dades de blocs si esteu segur que la data i l'hora del vostre ordinador són correctes</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>Final Release</source>
         <translation>Aquesta és una versió de pre-llançament - utilitza-la sota la teva responsabilitat - No usar per a minería o aplicacions de compra-venda</translation>
     </message>
     <message>

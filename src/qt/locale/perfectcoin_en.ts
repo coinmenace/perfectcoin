@@ -4221,7 +4221,7 @@
     </message>
     <message>
         <location line="+12"/>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>Final Release</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

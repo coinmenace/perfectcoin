@@ -38,7 +38,7 @@ class HelpTest(BitcoinTestFramework):
         self.log.info("Version text received: {} (...)".format(output[0:60]))
 
         # Test that arguments not in the help results in an error
-        self.log.info("Start bitcoind with -fakearg to make sure it does not start")
+        self.log.info("Start perfectcoind with -fakearg to make sure it does not start")
         self.nodes[0].start(extra_args=['-fakearg'], stderr=subprocess.PIPE, stdout=subprocess.PIPE)
         # Node should exit immediately and output an error to stderr
         ret_code = self.nodes[0].process.wait(timeout=1)

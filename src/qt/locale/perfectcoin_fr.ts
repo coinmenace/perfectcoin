@@ -3270,7 +3270,7 @@
         <translation>La base de données de blocs contient un bloc qui semble provenir du futur. Cela pourrait être causé par la date et l’heure erronées de votre ordinateur. Ne reconstruisez la base de données de blocs que si vous êtes certain que la date et l’heure de votre ordinateur sont justes.</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>Final Release</source>
         <translation>Ceci est une préversion de test - son utilisation est entièrement à vos risques - ne pas l’utiliser pour miner ou pour des applications marchandes</translation>
     </message>
     <message>

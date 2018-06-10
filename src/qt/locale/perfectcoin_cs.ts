@@ -3210,7 +3210,7 @@
         <translation>Databáze bloků obsahuje blok, který vypadá jako z budoucnosti, což může být kvůli špatně nastavenému datu a času na tvém počítači. Nech databázi bloků přestavět pouze v případě, že si jsi jistý, že máš na počítači správný datum a čas</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>Final Release</source>
         <translation>Tohle je testovací verze – používej ji jen na vlastní riziko, ale rozhodně ji nepoužívej k těžbě nebo pro obchodní aplikace</translation>
     </message>
     <message>

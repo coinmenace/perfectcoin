@@ -2,9 +2,9 @@
 
 KNOWN_VIOLATIONS=(
     "src/base58.cpp:.*isspace"
-    "src/bitcoin-tx.cpp.*stoul"
-    "src/bitcoin-tx.cpp.*trim_right"
-    "src/bitcoin-tx.cpp:.*atoi"
+    "src/perfectcoin-tx.cpp.*stoul"
+    "src/perfectcoin-tx.cpp.*trim_right"
+    "src/perfectcoin-tx.cpp:.*atoi"
     "src/core_read.cpp.*is_digit"
     "src/dbwrapper.cpp.*stoul"
     "src/dbwrapper.cpp:.*vsnprintf"

@@ -3266,7 +3266,7 @@
         <translation>База данных блоков содержит блок, который появляется из будущего. Это может из-за некорректно установленных даты и времени на вашем компьютере. Остается только перестроивать базу блоков, если вы уверены, что дата и время корректны.</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>Final Release</source>
         <translation>Это пре-релизная тестовая сборка - используйте на свой страх и риск - не используйте для добычи или торговых приложений</translation>
     </message>
     <message>

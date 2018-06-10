@@ -3222,7 +3222,7 @@
         <translation>De blokdatabase bevat een blok dat lijkt uit de toekomst te komen. Dit kan gebeuren omdat de datum en tijd van uw computer niet goed staat. Herbouw de blokdatabase pas nadat u de datum en tijd van uw computer correct heeft ingesteld.</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>Final Release</source>
         <translation>Dit is een pre-release testversie - gebruik op eigen risico! Gebruik deze niet voor het delven van munten of handelsdoeleinden</translation>
     </message>
     <message>

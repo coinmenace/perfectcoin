@@ -1,33 +1,33 @@
-# /etc/conf.d/bitcoind: config file for /etc/init.d/bitcoind
+# /etc/conf.d/perfectcoind: config file for /etc/init.d/perfectcoind
 
 # Config file location
-#BITCOIND_CONFIGFILE="/etc/bitcoin/bitcoin.conf"
+#PERFECTCOIND_CONFIGFILE="/etc/bitcoin/bitcoin.conf"
 
-# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
-#BITCOIND_PIDDIR="/var/run/bitcoind"
+# What directory to write pidfile to?  (created and owned by $PERFECTCOIND_USER)
+#PERFECTCOIND_PIDDIR="/var/run/perfectcoind"
 
 # What filename to give the pidfile
-#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/bitcoind.pid"
+#PERFECTCOIND_PIDFILE="${PERFECTCOIND_PIDDIR}/perfectcoind.pid"
 
-# Where to write bitcoind data (be mindful that the blockchain is large)
-#BITCOIND_DATADIR="/var/lib/bitcoind"
+# Where to write perfectcoind data (be mindful that the blockchain is large)
+#PERFECTCOIND_DATADIR="/var/lib/perfectcoind"
 
-# User and group to own bitcoind process
-#BITCOIND_USER="bitcoin"
-#BITCOIND_GROUP="bitcoin"
+# User and group to own perfectcoind process
+#PERFECTCOIND_USER="bitcoin"
+#PERFECTCOIND_GROUP="bitcoin"
 
-# Path to bitcoind executable
-#BITCOIND_BIN="/usr/bin/bitcoind"
+# Path to perfectcoind executable
+#PERFECTCOIND_BIN="/usr/bin/perfectcoind"
 
-# Nice value to run bitcoind under
-#BITCOIND_NICE=0
+# Nice value to run perfectcoind under
+#PERFECTCOIND_NICE=0
 
 # Additional options (avoid -conf and -datadir, use flags above)
-#BITCOIND_OPTS=""
+#PERFECTCOIND_OPTS=""
 
-# The timeout in seconds OpenRC will wait for bitcoind to terminate
+# The timeout in seconds OpenRC will wait for perfectcoind to terminate
 # after a SIGTERM has been raised.
 # Note that this will be mapped as argument to start-stop-daemon's
 # '--retry' option, which means you can specify a retry schedule
 # here. For more information see man 8 start-stop-daemon.
-BITCOIND_SIGTERM_TIMEOUT=60
+PERFECTCOIND_SIGTERM_TIMEOUT=60

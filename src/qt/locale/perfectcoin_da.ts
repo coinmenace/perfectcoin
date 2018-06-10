@@ -3254,7 +3254,7 @@
         <translation>Blokdatabasen indeholder en blok, som ser ud til at være fra fremtiden. Dette kan skyldes, at din computers dato og tid ikke er sat korrekt. Genopbyg kun blokdatabasen, hvis du er sikker på, at din computers dato og tid er korrekt</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>Final Release</source>
         <translation>Dette er en foreløbig testudgivelse – brug på eget ansvar – brug ikke til mining eller handelsprogrammer</translation>
     </message>
     <message>

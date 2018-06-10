@@ -698,13 +698,13 @@ void PrintExceptionContinue(const std::exception* pex, const char* pszThread)
 
 fs::path GetDefaultDataDir()
 {
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\Bitcoin
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\Bitcoin
-    // Mac: ~/Library/Application Support/Bitcoin
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\PerfectCoin
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\PerfectCoin
+    // Mac: ~/Library/Application Support/PerfectCoin
     // Unix: ~/.perfectcoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Bitcoin";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "PerfectCoin";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -714,7 +714,7 @@ fs::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // Mac
-    return pathRet / "Library/Application Support/Bitcoin";
+    return pathRet / "Library/Application Support/PerfectCoin";
 #else
     // Unix
     return pathRet / ".perfectcoin";
@@ -1168,9 +1168,9 @@ std::string CopyrightHolders(const std::string& strPrefix)
 {
     std::string strCopyrightHolders = strPrefix + strprintf(_(COPYRIGHT_HOLDERS), _(COPYRIGHT_HOLDERS_SUBSTITUTION));
 
-    // Check for untranslated substitution to make sure Bitcoin Core copyright is not removed by accident
-    if (strprintf(COPYRIGHT_HOLDERS, COPYRIGHT_HOLDERS_SUBSTITUTION).find("Bitcoin Core") == std::string::npos) {
-        strCopyrightHolders += "\n" + strPrefix + "The Bitcoin Core developers";
+    // Check for untranslated substitution to make sure PerfectCoin Core copyright is not removed by accident
+    if (strprintf(COPYRIGHT_HOLDERS, COPYRIGHT_HOLDERS_SUBSTITUTION).find("PerfectCoin Core") == std::string::npos) {
+        strCopyrightHolders += "\n" + strPrefix + "The PerfectCoin Core developers";
     }
     return strCopyrightHolders;
 }

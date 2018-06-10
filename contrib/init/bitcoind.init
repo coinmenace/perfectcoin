@@ -1,36 +1,36 @@
 #!/bin/bash
 #
-#  bitcoind The bitcoin core server.
+#  perfectcoind The bitcoin core server.
 #
 #
 # chkconfig: 345 80 20
-# description: bitcoind
-# processname: bitcoind
+# description: perfectcoind
+# processname: perfectcoind
 #
 
 # Source function library.
 . /etc/init.d/functions
 
-# you can override defaults in /etc/sysconfig/bitcoind, see below
-if [ -f /etc/sysconfig/bitcoind ]; then
-        . /etc/sysconfig/bitcoind
+# you can override defaults in /etc/sysconfig/perfectcoind, see below
+if [ -f /etc/sysconfig/perfectcoind ]; then
+        . /etc/sysconfig/perfectcoind
 fi
 
 RETVAL=0
 
-prog=bitcoind
-# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/bitcoind
-lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/bitcoind}
+prog=perfectcoind
+# you can override the lockfile via PERFECTCOIND_LOCKFILE in /etc/sysconfig/perfectcoind
+lockfile=${PERFECTCOIND_LOCKFILE-/var/lock/subsys/perfectcoind}
 
-# bitcoind defaults to /usr/bin/bitcoind, override with BITCOIND_BIN
-bitcoind=${BITCOIND_BIN-/usr/bin/bitcoind}
+# perfectcoind defaults to /usr/bin/perfectcoind, override with PERFECTCOIND_BIN
+perfectcoind=${PERFECTCOIND_BIN-/usr/bin/perfectcoind}
 
-# bitcoind opts default to -disablewallet, override with BITCOIND_OPTS
-bitcoind_opts=${BITCOIND_OPTS--disablewallet}
+# perfectcoind opts default to -disablewallet, override with PERFECTCOIND_OPTS
+perfectcoind_opts=${PERFECTCOIND_OPTS--disablewallet}
 
 start() {
     echo -n $"Starting $prog: "
-    daemon $DAEMONOPTS $bitcoind $bitcoind_opts
+    daemon $DAEMONOPTS $perfectcoind $perfectcoind_opts
     RETVAL=$?
     echo
     [ $RETVAL -eq 0 ] && touch $lockfile

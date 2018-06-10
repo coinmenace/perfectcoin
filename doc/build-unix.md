@@ -154,7 +154,7 @@ libqrencode (optional) can be installed with:
 
 Notes
 -----
-The release is built with GCC and then "strip bitcoind" to strip the debug
+The release is built with GCC and then "strip perfectcoind" to strip the debug
 symbols, which reduces the executable size by about 90%.
 
 

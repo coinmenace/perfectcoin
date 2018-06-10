@@ -3263,7 +3263,7 @@
         <translation>Databáza blokov obsahuje blok, ktorý vyzerá byť z budúcnosti. Toto môže byť spôsobené nesprávnym systémovým časom vášho počítača. Obnovujte databázu blokov len keď ste si istý, že systémový čas je nastavený správne.</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>Final Release</source>
         <translation>Toto je predbežná testovacia zostava - používate na vlastné riziko - nepoužívajte na ťaženie alebo obchodné aplikácie</translation>
     </message>
     <message>

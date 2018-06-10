@@ -980,7 +980,7 @@ AC_LINK_IFELSE([AC_LANG_PROGRAM([[
   #endif
   ]])],
   [boost_sleep=yes;
-     AC_DEFINE(HAVE_WORKING_BOOST_SLEEP_FOR, 1, [Define this symbol if boost sleep_for works])],
+     AC_DEFINE(HAVE_WORKING_BOOST_SLEEP_FOR, 0, [Define this symbol if boost sleep_for works])],
   [boost_sleep=no])
 LIBS="$TEMP_LIBS"
 CPPFLAGS="$TEMP_CPPFLAGS"

@@ -3096,7 +3096,7 @@
         <translation>区块数据库包含未来的交易，这可能是由本机错误的日期时间引起。若确认本机日期时间正确，请重新建立区块数据库。</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>Final Release</source>
         <translation>这是测试用的预发布版本 - 请谨慎使用 - 不要用来挖矿，或者在正式商用环境下使用</translation>
     </message>
     <message>

@@ -3271,7 +3271,7 @@
         <translation>區塊資料庫中有來自未來的區塊。可能是你電腦的日期時間不對。如果確定電腦日期時間沒錯的話，就重建區塊資料庫看看。</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>Final Release</source>
         <translation>這是個還沒發表的測試版本 - 使用請自負風險 - 請不要用來開採或做商業應用</translation>
     </message>
     <message>

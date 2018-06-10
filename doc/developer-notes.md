@@ -226,7 +226,7 @@ in-tree. Example use:
 $ valgrind --suppressions=contrib/valgrind.supp src/test/test_bitcoin
 $ valgrind --suppressions=contrib/valgrind.supp --leak-check=full \
       --show-leak-kinds=all src/test/test_bitcoin --log_level=test_suite
-$ valgrind -v --leak-check=full src/bitcoind -printtoconsole
+$ valgrind -v --leak-check=full src/perfectcoind -printtoconsole
 ```
 
 ### Compiling for test coverage
@@ -631,13 +631,13 @@ namespace {
     the location of the source file actually is relevant.
 
 - Use include guards to avoid the problem of double inclusion. The header file
-  `foo/bar.h` should use the include guard identifier `BITCOIN_FOO_BAR_H`, e.g.
+  `foo/bar.h` should use the include guard identifier `PERFECTCOIN_FOO_BAR_H`, e.g.
 
 ```c++
-#ifndef BITCOIN_FOO_BAR_H
-#define BITCOIN_FOO_BAR_H
+#ifndef PERFECTCOIN_FOO_BAR_H
+#define PERFECTCOIN_FOO_BAR_H
 ...
-#endif // BITCOIN_FOO_BAR_H
+#endif // PERFECTCOIN_FOO_BAR_H
 ```
 
 GUI
@@ -716,7 +716,7 @@ In addition to reviewing the upstream changes in `env_posix.cc`, you can use `ls
 check this. For example, on Linux this command will show open `.ldb` file counts:
 
 ```bash
-$ lsof -p $(pidof bitcoind) |\
+$ lsof -p $(pidof perfectcoind) |\
     awk 'BEGIN { fd=0; mem=0; } /ldb$/ { if ($4 == "mem") mem++; else fd++ } END { printf "mem = %s, fd = %s\n", mem, fd}'
 mem = 119, fd = 0
 ```
@@ -850,7 +850,7 @@ A few guidelines for introducing and reviewing new RPC interfaces:
 - Try not to overload methods on argument type. E.g. don't make `getblock(true)` and `getblock("hash")`
   do different things.
 
-  - *Rationale*: This is impossible to use with `bitcoin-cli`, and can be surprising to users.
+  - *Rationale*: This is impossible to use with `perfectcoin-cli`, and can be surprising to users.
 
   - *Exception*: Some RPC calls can take both an `int` and `bool`, most notably when a bool was switched
     to a multi-value, or due to other historical reasons. **Always** have false map to 0 and
@@ -869,7 +869,7 @@ A few guidelines for introducing and reviewing new RPC interfaces:
 
 - Add every non-string RPC argument `(method, idx, name)` to the table `vRPCConvertParams` in `rpc/client.cpp`.
 
-  - *Rationale*: `bitcoin-cli` and the GUI debug console use this table to determine how to
+  - *Rationale*: `perfectcoin-cli` and the GUI debug console use this table to determine how to
     convert a plaintext command line to JSON. If the types don't match, the method can be unusable
     from there.
 

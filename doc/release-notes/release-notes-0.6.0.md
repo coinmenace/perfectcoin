@@ -30,7 +30,7 @@ because database writes are queued to speed up download
 time.
 
 
-NEW FEATURES SINCE BITCOIN VERSION 0.5
+NEW FEATURES SINCE PERFECTCOIN VERSION 0.5
 
 Initial network synchronization should be much faster
 (one or two hours on a typical machine instead of ten or more
@@ -54,7 +54,7 @@ transactions and less traffic on the bitcoin
 network. The shorter keys are already supported
 by the network but wallet.dat files containing
 short keys are not compatible with earlier
-versions of Bitcoin-Qt/bitcoind.
+versions of Bitcoin-Qt/perfectcoind.
 
 New command-line argument -blocknotify=<command>
 that will spawn a shell process to run <command> 

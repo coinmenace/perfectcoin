@@ -3210,7 +3210,7 @@
         <translation>Blokkdatabasen inneholder en blokk som ser ut til å være fra fremtiden. Dette kan være fordi dato og tid på din datamaskin er satt feil. Gjenopprett kun blokkdatabasen når du er sikker på at dato og tid er satt riktig.</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>Final Release</source>
         <translation>Dette er en testversjon i påvente av utgivelse - bruk på egen risiko - ikke for bruk til blokkutvinning eller i forretningsøyemed</translation>
     </message>
     <message>

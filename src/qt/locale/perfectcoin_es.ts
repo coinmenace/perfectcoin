@@ -3277,7 +3277,7 @@
         <translation>La base de datos de bloques contiene un bloque que parece ser del futuro. Esto puede ser porque la fecha y hora de tu ordenador están mal ajustados. Reconstruye la base de datos de bloques solo si estas seguro de que la fecha y hora de tu ordenador estan ajustados correctamente.</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>Final Release</source>
         <translation>Esta es una versión de prueba prelanzada - utilícelo a su propio riesgo - no lo utilice para aplicaciones de minería o comerciales</translation>
     </message>
     <message>

@@ -3198,7 +3198,7 @@
         <translation>Blok veritabanı gelecekten gibi görünen bir blok içermektedir. Bu, bilgisayarınızın saat ve tarihinin yanlış ayarlanmış olmasından kaynaklanabilir. Blok veritabanını sadece bilgisayarınızın tarih ve saatinin doğru olduğundan eminseniz yeniden derleyin.</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>Final Release</source>
         <translation>Bu kararlı sürümden önceki bir deneme sürümüdür. - risklerini bilerek kullanma sorumluluğu sizdedir - perfectcoin oluşturmak ya da ticari uygulamalar için kullanmayınız</translation>
     </message>
     <message>

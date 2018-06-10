@@ -3270,7 +3270,7 @@
         <translation>Die Block-Datenbank enthält einen Block, der in der Zukunft auftaucht. Dies kann daran liegen, dass die Systemzeit Ihres Computers falsch eingestellt ist. Stellen Sie die Block-Datenbank nur wieder her, wenn Sie sich sicher sind, dass Ihre Systemzeit korrekt eingestellt ist.</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>Final Release</source>
         <translation>Dies ist eine Vorab-Testversion - Verwendung auf eigene Gefahr - nicht für Mining- oder Handelsanwendungen nutzen!</translation>
     </message>
     <message>

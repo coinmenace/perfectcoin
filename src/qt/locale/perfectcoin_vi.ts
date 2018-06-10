@@ -3190,8 +3190,8 @@
         <translation>The block database contains a block which appears to be from the future. This may be due to your computer's date and time being set incorrectly. Only rebuild the block database if you are sure that your computer's date and time are correct</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
-        <translation>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</translation>
+        <source>Final Release</source>
+        <translation>Final Release</translation>
     </message>
     <message>
         <source>This is the transaction fee you may discard if change is smaller than dust at this level</source>

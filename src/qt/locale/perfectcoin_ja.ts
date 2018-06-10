@@ -3234,7 +3234,7 @@
         <translation>ブロックのデータベースに未来の時刻のブロックが含まれています。これはおそらくお使いのコンピュータに設定されている日時が間違っていることを示しています。お使いのコンピュータの日時が本当に正しい場合にのみ、ブロックのデータベースの再構築を行ってください。</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>Final Release</source>
         <translation>これはリリース前のテストビルドです - 各自の責任で利用すること - 採掘や商取引に使用しないでください</translation>
     </message>
     <message>

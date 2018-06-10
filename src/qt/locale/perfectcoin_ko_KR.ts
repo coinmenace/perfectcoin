@@ -3251,7 +3251,7 @@
         <translation>블록 데이터베이스에 미래의 블록이 포함되어 있습니다. 이것은 사용자의 컴퓨터의 날짜와 시간이 올바르게 설정되어 있지 않을때 나타날 수 있습니다. 만약 사용자의 컴퓨터의 날짜와 시간이 올바르다고 확신할 때에만 블록 데이터 베이스의 재구성을 하십시오</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>Final Release</source>
         <translation>출시 전의 테스트 빌드 입니다. - 스스로의 책임하에 사용하십시오 - 채굴이나 상업적 용도로 프로그램으로 사용하지 마십시오</translation>
     </message>
     <message>
