@@ -112,51 +112,22 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xf9;
-        pchMessageStart[1] = 0xbe;
-        pchMessageStart[2] = 0xb4;
-        pchMessageStart[3] = 0xd9;
+        pchMessageStart[0] = 0xc9;
+        pchMessageStart[1] = 0xde;
+        pchMessageStart[2] = 0xf4;
+        pchMessageStart[3] = 0xe9;
         nDefaultPort = 6333;
         nPruneAfterHeight = 100000;
-        uint32_t nTime = 1528459200;
-        uint32_t nNonce = 51874363;
+        uint32_t nTime = 1528695432;
+        uint32_t nNonce = 52063620;
         uint32_t nBits = 504365040;
         int32_t nVersion = 1;
         const CAmount& genesisReward = 50 * COIN;
         genesis = CreateGenesisBlock(nTime, nNonce, nBits, nVersion, genesisReward);
         //genesis = CreateGenesisBlock(1528536005, 3078569, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        /** if(genesis.GetHash() != uint256S("0x"))
-           {
-                   bool fNegative;
-                   bool fOverflow;
-                   arith_uint256 bigNum;
-                   printf("Searching for genesis block...\n");
-                   bigNum.SetCompact(genesis.nBits, &fNegative, &fOverflow);
-                   while(UintToArith256(genesis.GetHash()) > bigNum)
-                   {
 
-                       ++genesis.nNonce;
-                           if (genesis.nNonce == 0)
-                           {
-                                   printf("NONCE WRAPPED, incrementing time");
-                                   std::cout << std::string("NONCE WRAPPED, incrementing time:\n");
-                                   ++genesis.nTime;
-                           }
-                           if (genesis.nNonce % 10000 == 0)
-                           {
-                                   printf("Mainnet: nonce %08u: hash = %s \n", genesis.nNonce, genesis.GetHash().ToString().c_str());
-                           }
-                   }
-                   printf("Mainnet block.nBits = %u \n", genesis.nBits);
-                   printf("Mainnet block.nTime = %u \n", genesis.nTime);
-                   printf("Mainnet block.nNonce = %u \n", genesis.nNonce);
-                   printf("Mainnet block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
-                   printf("Mainnet block.GetHash = %s\n", genesis.GetHash().GetHex().c_str());
-                   printf("Mainnet block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
-           }
- */
-        assert(consensus.hashGenesisBlock == uint256S("0x000008f515d41d27ce4b372511c36f8083cfa05482cc8d83045baa65fb7493b4"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000023a7e4efd3d3f14dd27b47fa3d55160ce723a9c4e92b7d5b706cbf7b32a"));
         assert(genesis.hashMerkleRoot == uint256S("0x10aafd067703f004f14df23da2e6f97d599561a8e0cc5233a9ea15e3b54d6b5f"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
@@ -176,7 +147,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
 
-        bech32_hrp = "bc";
+        bech32_hrp = "ptc";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
@@ -184,31 +155,19 @@ public:
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
 
-        /**checkpointData = {
+       checkpointData = {
             {
-                { 11111, uint256S("0x0000000069e244f73d78e8fd29ba2fd2ed618bd6fa2ee92559f542fdb26e7c1d")},
-                { 33333, uint256S("0x000000002dd5588a74784eaa7ab0507a18ad16a236e7b1ce69f00d7ddfb5d0a6")},
-                { 74000, uint256S("0x0000000000573993a3c9e41ce34471c079dcf5f52a0e824a81e7f953b8661a20")},
-                {105000, uint256S("0x00000000000291ce28027faea320c8d2b054b2e0fe44a773f3eefb151d6bdc97")},
-                {134444, uint256S("0x00000000000005b12ffd4cd315cd34ffd4a594f430ac814c91184a0d42d2b0fe")},
-                {168000, uint256S("0x000000000000099e61ea72015e79632f216fe6cb33d7899acb35b75c8303b763")},
-                {193000, uint256S("0x000000000000059f452a5f7340de6682a977387c17010ff6e6c3bd83ca8b1317")},
-                {210000, uint256S("0x000000000000048b95347e83192f69cf0366076336c639f9b7228e9ba171342e")},
-                {216116, uint256S("0x00000000000001b4f4b433e81ee46494af945cf96014816a4e2370f11b23df4e")},
-                {225430, uint256S("0x00000000000001c108384350f74090433e7fcf79a606b8e797f065b130575932")},
-                {250000, uint256S("0x000000000000003887df1f29024b06fc2200b55f8af8f35453d7be294df2d214")},
-                {279000, uint256S("0x0000000000000001ae8c72a0b0c301f67e3afca10e819efa9041e458e9bd7e40")},
-                {295000, uint256S("0x00000000000000004d9b4ef50f0f9d686fd69db2e03af35a100370c64632a983")},
-            }
+                { 0, uint256S("0x0000023a7e4efd3d3f14dd27b47fa3d55160ce723a9c4e92b7d5b706cbf7b32a")},
+                 }
         };
 
         chainTxData = ChainTxData{
             // Data as of block 0000000000000000002d6cca6761c99b3c2e936f9a0e304b7c7651a993f461de (height 506081).
-            1516903077, // * UNIX timestamp of last known number of transactions
-            295363220,  // * total number of transactions between genesis and that timestamp
+                1528695432, // * UNIX timestamp of last known number of transactions
+            0,  // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the ChainStateFlushed debug.log lines)
-            3.5         // * estimated number of transactions per second after that timestamp
-        };*/
+            0         // * estimated number of transactions per second after that timestamp
+        };
 
         /* disable fallback fee on mainnet */
         m_fallback_fee_enabled = false;
@@ -229,8 +188,8 @@ public:
         consensus.BIP65Height = 581885; // 00000000007f6655f22f98e72ed80d8b06dc761d5da09df0fa1dc4be4f861eb6
         consensus.BIP66Height = 330776; // 000000002104c8c45e99a8853285a3b592602a3ccde2b832481da85e9e4ba182
         consensus.powLimit = uint256S("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
-        consensus.nPowTargetSpacing = 1.5 * 60;
+        consensus.nPowTargetTimespan = 1.5 * 60; // 90 secs
+        consensus.nPowTargetSpacing = 60;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
@@ -255,44 +214,17 @@ public:
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x0000000002e9e7b00e1f6dc5123a04aad68dd0f0968d8c7aa45f6640795c37b1"); //1135275
 
-        pchMessageStart[0] = 0x0b;
-        pchMessageStart[1] = 0x11;
-        pchMessageStart[2] = 0x09;
-        pchMessageStart[3] = 0x07;
+        pchMessageStart[0] = 0xfb;
+        pchMessageStart[1] = 0xc1;
+        pchMessageStart[2] = 0xd9;
+        pchMessageStart[3] = 0x27;
         nDefaultPort = 6433;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1528458200, 417092626, 504365040, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1528695402, 417154374, 504365040, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        /** if(genesis.GetHash() != uint256S("0x"))
-          {
-                  bool fNegative;
-                  bool fOverflow;
-                  arith_uint256 bigNum;
-                  printf("Searching for genesis block...\n");
-                  bigNum.SetCompact(genesis.nBits, &fNegative, &fOverflow);
-                  while(UintToArith256(genesis.GetHash()) > bigNum)
-                  {
-                          ++genesis.nNonce;
-                          if (genesis.nNonce == 0)
-                          {
-                                  printf("NONCE WRAPPED, incrementing time");
-                                  std::cout << std::string("NONCE WRAPPED, incrementing time:\n");
-                                  ++genesis.nTime;
-                          }
-                          if (genesis.nNonce % 10000 == 0)
-                          {
-                                  //printf("Testnet: nonce %08u: hash = %s \n", genesis.nNonce, genesis.GetHash().ToString().c_str());
-                          }
-                  }
-                  printf("Testnet block.nBits = %u \n", genesis.nBits);
-                  printf("Testnet block.nTime = %u \n", genesis.nTime);
-                  printf("Testnet block.nNonce = %u \n", genesis.nNonce);
-                  printf("Testnet block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
-                  printf("Testnet block.GetHash = %s\n", genesis.GetHash().GetHex().c_str());
-                  printf("Testnet block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
-          } */
-        assert(consensus.hashGenesisBlock == uint256S("0x0000065d439bf32a666937f41143897482f1bf929ed9c74a205a75bab58f2565"));
+
+        assert(consensus.hashGenesisBlock == uint256S("0x0000072018dc7dbc11d93655e8d57a30cef29b21ac60b74cf705b2e153b92770"));
         assert(genesis.hashMerkleRoot == uint256S("0x10aafd067703f004f14df23da2e6f97d599561a8e0cc5233a9ea15e3b54d6b5f"));
 
         vFixedSeeds.clear();
@@ -311,7 +243,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        bech32_hrp = "tb";
+        bech32_hrp = "ptct";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
@@ -322,15 +254,14 @@ public:
 
         checkpointData = {
             {
-                {546, uint256S("000000002a936ca763904c3c35fce2f3556c559c0214345d31b1bcebf76acb70")},
+                {0, uint256S("0x0000072018dc7dbc11d93655e8d57a30cef29b21ac60b74cf705b2e153b92770")},
             }
         };
 
         chainTxData = ChainTxData{
-            // Data as of block 000000000000033cfa3c975eb83ecf2bb4aaedf68e6d279f6ed2b427c64caff9 (height 1260526)
-            1516903490,
-            17082348,
-            0.09
+            1528695402,
+            0,
+            0
         };
 
         /* enable fallback fee on testnet */
@@ -352,8 +283,8 @@ public:
         consensus.BIP65Height = 1351; // BIP65 activated on regtest (Used in rpc activation tests)
         consensus.BIP66Height = 1251; // BIP66 activated on regtest (Used in rpc activation tests)
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
-        consensus.nPowTargetSpacing = 1.5 * 60;
+        consensus.nPowTargetTimespan = 1.5 * 60; // 90 secs
+        consensus.nPowTargetSpacing = 60;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
         consensus.nRuleChangeActivationThreshold = 108; // 75% for testchains
@@ -374,44 +305,17 @@ public:
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x00");
 
-        pchMessageStart[0] = 0xfa;
-        pchMessageStart[1] = 0xbf;
-        pchMessageStart[2] = 0xb5;
+        pchMessageStart[0] = 0xca;
+        pchMessageStart[1] = 0xff;
+        pchMessageStart[2] = 0xc5;
         pchMessageStart[3] = 0xda;
         nDefaultPort = 6544;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1528457200, 8465129, 504365040, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1528695332, 52359808, 504365040, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-            /**if(genesis.GetHash() != uint256S("0x"))
-            {
-                    bool fNegative;
-                    bool fOverflow;
-                    arith_uint256 bigNum;
-                    printf("Searching for genesis block...\n");
-                    bigNum.SetCompact(genesis.nBits, &fNegative, &fOverflow);
-                    while(UintToArith256(genesis.GetHash()) > bigNum)
-                    {
-                            ++genesis.nNonce;
-                            if (genesis.nNonce == 0)
-                            {
-                                    printf("NONCE WRAPPED, incrementing time");
-                                    std::cout << std::string("NONCE WRAPPED, incrementing time:\n");
-                                    ++genesis.nTime;
-                            }
-                            if (genesis.nNonce % 10000 == 0)
-                            {
-                                    //printf("Testnet: nonce %08u: hash = %s \n", genesis.nNonce, genesis.GetHash().ToString().c_str());
-                            }
-                    }
-                    printf("RegTestnet block.nBits = %u \n", genesis.nBits);
-                    printf("RegTestnet block.nTime = %u \n", genesis.nTime);
-                    printf("RegTestnet block.nNonce = %u \n", genesis.nNonce);
-                    printf("RegTestnet block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
-                    printf("RegTestnet block.GetHash = %s\n", genesis.GetHash().GetHex().c_str());
-                    printf("RegTestnet block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
-            }*/
-        assert(consensus.hashGenesisBlock == uint256S("0x00000bc33008d34a646d40528c0c379016dc2411193958d2109f20635b9b31f7"));
+
+        assert(consensus.hashGenesisBlock == uint256S("0x00000655206db6ce2b08d721b788cc1c5c6e56c860bf171355d4c97917ab0f7e"));
         assert(genesis.hashMerkleRoot == uint256S("0x10aafd067703f004f14df23da2e6f97d599561a8e0cc5233a9ea15e3b54d6b5f"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
@@ -423,7 +327,7 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206")},
+                {0, uint256S("0x00000655206db6ce2b08d721b788cc1c5c6e56c860bf171355d4c97917ab0f7e")},
             }
         };
 
@@ -439,7 +343,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        bech32_hrp = "bcrt";
+        bech32_hrp = "ptcrt";
 
         /* enable fallback fee on regtest */
         m_fallback_fee_enabled = true;

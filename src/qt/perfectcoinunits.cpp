@@ -45,7 +45,7 @@ QString BitcoinUnits::longName(int unit)
     case PTC: return QString("PTC");
     case mPTC: return QString("mPTC");
     case uPTC: return QString::fromUtf8("µPTC (bits)");
-    case SAT: return QString("Satoshi (sat)");
+    case SAT: return QString("PFC (pfc)");
     default: return QString("???");
     }
 }
@@ -55,7 +55,7 @@ QString BitcoinUnits::shortName(int unit)
     switch(unit)
     {
     case uPTC: return QString::fromUtf8("bits");
-    case SAT: return QString("sat");
+    case SAT: return QString("pfc");
     default: return longName(unit);
     }
 }
@@ -64,10 +64,10 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case PTC: return QString("Bitcoins");
-    case mPTC: return QString("Milli-Bitcoins (1 / 1" THIN_SP_UTF8 "000)");
-    case uPTC: return QString("Micro-Bitcoins (bits) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-    case SAT: return QString("Satoshi (sat) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case PTC: return QString("PerfectCoins");
+    case mPTC: return QString("Milli-PerfectCoins (1 / 1" THIN_SP_UTF8 "000)");
+    case uPTC: return QString("Micro-PerfectCoins (bits) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case SAT: return QString("PFC (pfc) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
 }

@@ -17,7 +17,7 @@ const std::string CLIENT_NAME("PerfectCoin");
 /**
  * Client version number
  */
-#define CLIENT_VERSION_SUFFIX ""
+#define CLIENT_VERSION_SUFFIX "Equator"
 
 
 /**
@@ -46,7 +46,7 @@ const std::string CLIENT_NAME("PerfectCoin");
 #define GIT_COMMIT_ID "$Format:%H$"
 #define GIT_COMMIT_DATE "$Format:%cD$"
 #endif
-#define BUILD_SUFFIX "Launch"
+
 #define BUILD_DESC_WITH_SUFFIX(maj, min, rev, build, suffix) \
     "v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev) "." DO_STRINGIZE(build) "-" DO_STRINGIZE(suffix)
 
